@@ -1,26 +1,51 @@
 <template>
     <div id="page">
-        <h1 id="h1">One Piece</h1>
+        <div id="header">
+            <h1 id="h1">Heartstrings</h1>
+        </div>
     </div>
+    <Footer />
 </template>
 
+<script>
+import Footer from "../components/Footer.vue";
+export default {
+    components: { Footer }
+}
+</script>
+
 <style scoped>
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-#page{
+html,
+body {
+    background-color: #9C9EFE;
+}
+
+#page {
     background-color: #9C9EFE;
     width: 100%;
     height: 93vh;
+    font-family: Rockwell;
 }
 
-#h1{
+#header {
+    padding-top: 30vh;
+    display: flex;
+    justify-content: center;
+}
+
+#placeholder {
     background-color: #AFB4FF;
+    width: 100vh;
+}
+
+h1 {
     color: #B1E1FF;
-    height: 2vh;
-    width: 5vw;
+    font-size: 5vw;
 }
 </style>
 
