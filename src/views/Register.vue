@@ -17,6 +17,9 @@
                 <label for="Password" class="textincard">Password</label>
                 <input type="text" class="textincard">
             </div>
+            <div class="row">
+                <button type="button" class="textincard">Register</button>
+            </div>
         </div>
     </div>
 </template>
@@ -59,5 +62,9 @@ export default {
 .textincard {
     font-size: 2vw;
     margin: auto;
+}
+
+button {
+    width: 50vw;
 }
 </style>
