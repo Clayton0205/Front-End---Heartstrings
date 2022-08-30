@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col">
-          <router-link to="/album">Albums</router-link>
+          <router-link to="/albums">Albums</router-link>
         </div>
         <div class="col">
           |

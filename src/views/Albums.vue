@@ -1,6 +1,6 @@
 <template>
     <div id="page">
-        <router-link to="">
+        <router-link to="/album">
             <div class="container-fluid" v-if="albums">
                 <div v-for="album in albums" :key="album" id="box">
                     <div class="row card">
