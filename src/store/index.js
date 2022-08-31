@@ -40,6 +40,7 @@ export default createStore({
         "https://heartstrings-api.herokuapp.com/albums/" + id
       );
       let res = await fetched.json();
+      console.log(res);
       context.commit("setAlbum", res.album);
     },
   },

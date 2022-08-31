@@ -1,34 +1,38 @@
 <template>
     <div id="page">
-        <router-link to="/album">
-            <div class="container-fluid" v-if="albums">
-                <div v-for="album in albums" :key="album" id="box">
+        <div class="container-fluid" v-if="albums">
+            <div v-for="album in albums" :key="album" id="box">
+                <router-link :to="{ name: 'album', params: { id: album.id } }">
                     <div class="row card">
                         <p>{{  album.album  }}</p>
                         <img :src="album.image" id="img">
-                        <p>{{ album.artist }}</p>
-                        <p>{{ album.year }}</p>
-                        <p>R{{ album.price }}</p>
+                        <p>{{  album.artist  }}</p>
+                        <p>{{  album.year  }}</p>
+                        <p>R{{  album.price  }}</p>
                     </div>
-                </div>
+                </router-link>
             </div>
-            <div v-else>
-                Why are you not loading
-            </div>
-        </router-link>
+        </div>
+        <div v-else>
+            Why are you not loading
+        </div>
+        <Footer/>
     </div>
 </template>
 
 <script>
+import Footer from "../components/Footer.vue";
 export default {
+    components: [Footer],
     mounted() {
-        this.$store.dispatch('getAlbums')
+        this.$store.dispatch("getAlbums");
     },
     computed: {
         albums() {
-            return this.$store.state.albums
+            return this.$store.state.albums;
         }
-    }
+    },
+    components: { Footer }
 }
 </script>
 
@@ -36,7 +40,7 @@ export default {
 #page {
     background-color: #9C9EFE;
     width: 100%;
-    height: 230vh;
+    height: 235vh;
     font-family: Rockwell;
 }
 
@@ -58,7 +62,7 @@ export default {
     background-color: #A66CFF;
 }
 
-a{
+a {
     color: #B1E1FF;
     text-decoration: none;
 }

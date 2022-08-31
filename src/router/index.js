@@ -21,7 +21,7 @@ const routes = [
     component: () => import('../views/Albums.vue')
   },
   {
-    path: '/album',
+    path: '/album/:id',
     name: 'album',
     component: () => import('../views/Album.vue')
   },
@@ -44,6 +44,11 @@ const routes = [
   path: '/admin',
   name: 'admin',
   component: () => import('../views/Admin.vue')
+},
+{
+path: '/thank',
+name: 'thank',
+component: () => import('../views/Thanks.vue')
 }
 ]
 
