@@ -1,6 +1,6 @@
 <template>
     <div id="footer">
-        <router-link to="/admins">This link is for those who are logged in as Admins</router-link>
+        <router-link to="/admin">This link is for those who are logged in as Admins</router-link>
     </div>
 </template>
 

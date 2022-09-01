@@ -9,16 +9,16 @@
                 </router-link>
             </div>
             <div class="row" id="header">
-                <p>{{  album[0].album  }}</p>
+                <p>{{ album[0].album }}</p>
             </div>
             <div class="row">
                 <div class="col">
                     <div class="container">
                         <div class="row">
-                            <p class="side">Artist : <br> {{  album[0].artist  }}</p>
+                            <p class="side">Artist : <br> {{ album[0].artist }}</p>
                         </div>
                         <div class="row">
-                            <p class="side">Type : <br> {{  album[0].musictype  }}</p>
+                            <p class="side">Type : <br> {{ album[0].musictype }}</p>
                         </div>
                     </div>
                 </div>
@@ -28,12 +28,12 @@
                         <div class="row">
                             <p class="side">
                                 Year : <br>
-                                {{  album[0].year  }}</p>
+                                {{ album[0].year }}</p>
                         </div>
                         <div class="row">
                             <p class="side">
                                 Price : <br>
-                                R{{  album[0].price  }}
+                                R{{ album[0].price }}
                             </p>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                 <div class="col"></div>
                 <div class="col button">
                     <button type="button"> <a href="#box">Description</a></button>
-                    <button type="button">
+                    <button @click="addCart()" type="button">
                         <router-link to="/thank">
                             + Add to Cart
                         </router-link>
@@ -53,7 +53,7 @@
             </div>
             <div class="row">
                 <div id="box">
-                    <p>{{  album[0].description  }}</p>
+                    <p>{{ album[0].description }}</p>
                 </div>
             </div>
         </div>
@@ -71,10 +71,28 @@ export default {
     computed: {
         album() {
             return this.$store.state.album;
+        },
+        user() {
+            return this.$store.state.user
         }
     },
     mounted() {
         this.$store.dispatch("getAlbum", this.$route.params.id);
+    },
+    methods: {
+        addCart() {
+            let product = {
+                musictype: this.album[0].musictype,
+                album: this.album[0].album,
+                image: this.album[0].image,
+                description: this.album[0].description,
+                artist: this.album[0].artist,
+                year: this.album[0].year,
+                price: this.album[0].price,
+                creatorID: this.album[0].creatorID
+            }
+            this.$store.dispatch('addCart', this.album , this.user.userID)
+        }
     },
     components: { Footer }
 }
