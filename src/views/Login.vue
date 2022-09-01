@@ -7,18 +7,18 @@
             <br>
             <div class="row card">
                 <label for="Fullname" class="textincard">Fullname</label>
-                <input type="text" class="textincard">
+                <input type="text" v-model="fullname" class="textincard">
             </div>
             <div class="row card">
                 <label for="Email" class="textincard">Email</label>
-                <input type="text" class="textincard">
+                <input type="text" v-model="email" class="textincard">
             </div>
             <div class="row card">
                 <label for="Password" class="textincard">Password</label>
-                <input type="text" class="textincard">
+                <input type="text" v-model="password" class="textincard">
             </div>
             <div class="row">
-                <button type="button" class="textincard">Login</button>
+                <button type="button" @click="login()" class="textincard">Login</button>
             </div>
         </div>
     </div>
@@ -26,11 +26,23 @@
 
 <script>
 export default {
-    setup() {
-
-
-        return {}
+data(){
+    return{
+        fullname: '',
+        email: '',
+        password: ''
     }
+},
+methods:{
+    login(){
+        const user = {
+            fullname: this.fullname,
+            email: this.email,
+            password: this.password
+        }
+        this.$store.dispatch('login',user)
+    }
+}
 }
 </script>
 
