@@ -1,9 +1,9 @@
 <template>
     <div id="page">
         <div v-if="user">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
-                    <p>{{ user.Fullname }}'s Cart</p>
+                    <h1>{{ user.Fullname }}'s Cart</h1>
                 </div>
                 <div class="row card" v-for="album in cart" :key="album" :album="album">
                     <h1>{{ album.album }}</h1>
