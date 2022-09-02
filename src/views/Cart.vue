@@ -1,11 +1,20 @@
 <template>
     <div id="page">
-        <div class="container">
-            <div class="row">
-                <p>{{ user.Fullname }}'s Cart</p>
+        <div v-if="albums">
+            <div class="container">
+                <div class="row">
+                    <p>{{ user.Fullname }}'s Cart</p>
+                </div>
+                <div class="row card" v-for="album in cart" :key="album">
+                    <h1>{{ album.album }}</h1>
+                </div>
             </div>
-            <div class="row card" v-for="album in cart" :key="album">
-               <h1>{{album.album}}</h1>
+        </div>
+        <div v-else>
+            <div class="container-fluid">
+                <div class="row heading">
+                    <h1>Your Cart</h1>
+                </div>
             </div>
         </div>
     </div>
@@ -33,8 +42,13 @@ export default {
 #page {
     background-color: #9C9EFE;
     width: 100%;
-    height: 115vh;
+    height: 93vh;
     font-family: Rockwell;
     color: #B1E1FF;
+}
+
+.heading{
+    text-align: center;
+    text-decoration: underline;
 }
 </style>

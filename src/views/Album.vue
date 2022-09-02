@@ -91,7 +91,7 @@ export default {
                 price: this.album[0].price,
                 creatorID: this.album[0].creatorID
             }
-            this.$store.dispatch('addCart', this.album , this.user.userID)
+            this.$store.dispatch('addCart', product)
         }
     },
     components: { Footer }

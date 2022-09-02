@@ -6,10 +6,6 @@
             </div>
             <br>
             <div class="row card">
-                <label for="Fullname" class="textincard">Fullname</label>
-                <input type="text" v-model="fullname" class="textincard">
-            </div>
-            <div class="row card">
                 <label for="Email" class="textincard">Email</label>
                 <input type="text" v-model="email" class="textincard">
             </div>
@@ -28,7 +24,6 @@
 export default {
 data(){
     return{
-        fullname: '',
         email: '',
         password: ''
     }
@@ -36,7 +31,6 @@ data(){
 methods:{
     login(){
         const user = {
-            fullname: this.fullname,
             email: this.email,
             password: this.password
         }
