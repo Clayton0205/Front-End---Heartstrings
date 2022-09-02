@@ -3,10 +3,14 @@
         <div v-if="user">
             <div class="container-fluid">
                 <div class="row">
-                    <h1>{{ user.Fullname }}'s Cart</h1>
+                    <div class="col">
+                        <h1>{{ user.Fullname }}'s Cart</h1>
+                    </div>
+                    <div class="col"><button type="button">Delete All</button></div>
                 </div>
-                <div class="row card" v-for="album in cart" :key="album" :album="album">
-                    <h1>{{ album.album }}</h1>
+                <div class="row" v-for="album in cart" :key="album" :album="album">
+                    <div class="col"><h1>{{ album.album }}</h1></div>
+                    <div class="col"><button type="button">Delete Item</button></div>
                 </div>
             </div>
         </div>
@@ -47,7 +51,7 @@ export default {
     color: #B1E1FF;
 }
 
-.heading{
+.heading {
     text-align: center;
     text-decoration: underline;
 }
