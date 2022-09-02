@@ -1,11 +1,11 @@
 <template>
     <div id="page">
-        <div v-if="albums">
+        <div v-if="user">
             <div class="container">
                 <div class="row">
                     <p>{{ user.Fullname }}'s Cart</p>
                 </div>
-                <div class="row card" v-for="album in cart" :key="album">
+                <div class="row card" v-for="album in cart" :key="album" :album="album">
                     <h1>{{ album.album }}</h1>
                 </div>
             </div>
