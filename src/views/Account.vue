@@ -2,12 +2,10 @@
     <div id="page">
         <div v-if="user">
             <h1>{{ user.Fullname }}</h1>
-            <h1>{{user.Email}}</h1>
-            
+            <h1>{{ user.Email }}</h1>
         </div>
-        
         <div v-else>
-        <h1>You are not loged in</h1>
+            <h1>You are not loged in</h1>
         </div>
     </div>
 </template>
@@ -19,7 +17,7 @@ export default {
             return this.$store.state.user
         }
     }
-}
+    }
 </script>
 
 <style scoped>

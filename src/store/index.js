@@ -46,6 +46,29 @@ export default createStore({
       let res = await fetched.json();
       context.commit("setAlbum", res.album);
     },
+    updateAlbum(context, payload) {
+      fetch('https://heartstrings-api.herokuapp.com/albums/' + payload.id, {
+        method: 'PUT',
+        body: JSON.stringify(payload),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        }
+      })
+    },
+    deleteAlbum(context, id){
+      fetch('https://heartstrings-api.herokuapp.com/albums/' + id, {
+        method: 'DELETE'
+      })
+      .then((res)=> res.json())
+      .then((data)=>{
+        swal({
+          icon: 'success',
+          title: 'Weapon Deleted',
+          timer: 1000
+        })
+        context.dispatch('getAlbums')
+      })
+    },
     register(context, payload) {
       const { fullname, email, password } = payload;
       fetch("https://heartstrings-api.herokuapp.com/users", {

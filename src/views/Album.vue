@@ -20,6 +20,9 @@
                         <div class="row">
                             <p class="side">Type : <br> {{ album[0].musictype }}</p>
                         </div>
+                        <div class="row">
+                            <Navbar/>
+                        </div>
                     </div>
                 </div>
                 <div class="col"><img :src="album[0].image" id="image"></div>
@@ -65,9 +68,10 @@
 </template>
 
 <script>
+import Navbar from "../components/nav.vue"
 import Footer from "../components/Footer.vue";
 export default {
-    components: [Footer],
+    components: { Footer, Navbar },
     computed: {
         album() {
             return this.$store.state.album;
@@ -94,7 +98,6 @@ export default {
             this.$store.dispatch('addCart', product)
         }
     },
-    components: { Footer }
 }
 </script>
 
