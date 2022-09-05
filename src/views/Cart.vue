@@ -6,11 +6,13 @@
                     <div class="col">
                         <h1>{{ user.Fullname }}'s Cart</h1>
                     </div>
-                    <div class="col"><button type="button">Delete All</button></div>
+                    <div class="col"><button type="button" @click="clear()">Delete All</button></div>
                 </div>
                 <div class="row" v-for="album in cart" :key="album" :album="album">
-                    <div class="col"><h1>{{ album.album }}</h1></div>
-                    <div class="col"><button type="button">Delete Item</button></div>
+                    <div class="col">
+                        <h1>{{ album.album }}</h1>
+                    </div>
+                    <div class="col"><button type="button" @click="deleteSingle()">Delete Item</button></div>
                 </div>
             </div>
         </div>
@@ -34,6 +36,15 @@ export default {
             return this.$store.state.cart
         }
     },
+    methods: {
+        clear() {
+            this.$store.dispatch('deleteCart')
+            this.cart = null
+        },
+        deleteSingle() {
+            this.$store.dispatch('deleteSingleCart')
+        }
+    }
 }
 </script>
 

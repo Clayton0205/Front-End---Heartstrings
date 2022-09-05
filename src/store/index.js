@@ -44,7 +44,6 @@ export default createStore({
         "https://heartstrings-api.herokuapp.com/albums/" + id
       );
       let res = await fetched.json();
-      console.log(res);
       context.commit("setAlbum", res.album);
     },
     register(context, payload) {
@@ -87,18 +86,15 @@ export default createStore({
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           if (data.msg === "Email Not Found") {
             alert(data.msg);
-          } else if(data.msg === "Password is Incorrect"){
-              
-              alert(data.msg);
-            } else {
-              alert("You are now loged in");
-              context.commit("setUser", data.user[0]);
-              // context.dispatch("getUserCart");
-            }
-          
+          } else if (data.msg === "Password is Incorrect") {
+            alert(data.msg);
+          } else {
+            alert("You are now loged in");
+            context.commit("setUser", data.user[0]);
+            context.dispatch("getUserCart");
+          }
         });
     },
     async getUserCart(context) {
@@ -130,6 +126,43 @@ export default createStore({
             alert(data.results);
           } else {
             alert("Item Added");
+            context.dispatch("getUserCart");
+          }
+        });
+    },
+    deleteCart(context) {
+      fetch(
+        "https://heartstrings-api.herokuapp.com/users/" +
+          context.state.user.userID +
+          "/cart",
+        {
+          method: "DELETE",
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.result == "There is no user with that ID") {
+            alert(data.result);
+          } else {
+            alert("Cart Deleted");
+            context.dispatch("getUserCart");
+          }
+        });
+    },
+    deleteSingleCart(context) {
+      fetch(
+        "https://heartstrings-api.herokuapp.com/users/" +
+          context.state.user.userID + "/cart/" + context.state.cart.cartId,
+        {
+          method: "DELETE",
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.result == "There is no user with that ID") {
+            alert(data.result);
+          } else {
+            alert("Item Removed from cart");
             context.dispatch("getUserCart");
           }
         });

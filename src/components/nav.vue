@@ -37,6 +37,12 @@
         <div class="col">
           <router-link to="/about">About</router-link>
         </div>
+        <div class="col">
+          |
+        </div>
+        <div class="col">
+          <router-link to="/account">Account</router-link>
+        </div>
       </div>
     </div>
   </nav>
@@ -67,7 +73,7 @@
       font-family: Rockwell;
       text-decoration: none;
       color: #B1E1FF;
-      font-size: 2vw;
+      font-size: 1vw;
       /* text-decoration: underline; */
     }
     
