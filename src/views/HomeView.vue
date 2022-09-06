@@ -1,16 +1,25 @@
 <template>
     <div id="page">
-        <div id="header">
-            <h1 id="h1">Heartstrings</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col" id="nav">
+                    <navleft />
+                </div>
+                <div class="col" id="header">
+                    <img src="../assets/tumblr_mw1l2sYQs81svwlszo1_500.webp" id="img">
+                    <h1 id="h1">Heartstrings</h1>
+                </div>
+                <!-- <div class="col" id="cred">GAyer</div> -->
+            </div>
+
         </div>
     </div>
-    <Footer />
 </template>
 
 <script>
-import Footer from "../components/Footer.vue";
+import navleft from "../components/navleft.vue"
 export default {
-    components: { Footer }
+    components: { navleft }
 }
 </script>
 
@@ -20,36 +29,45 @@ export default {
     padding: 0;
 }
 
-html,
-body {
-    background-color: #9C9EFE;
-}
-
 #page {
-    background-color: #9C9EFE;
+    background-color: #FFEBC1;
     width: 100%;
-    height: 93vh;
-    font-family: Rockwell;
+    height: 100vh;
 }
 
 #header {
-    padding-top: 30vh;
+    margin-top: 5%;
+    margin-right: 10%;
+    width: 1000px;
+    text-align: center;
     display: flex;
-    justify-content: center;
-}
-
-#placeholder {
-    background-color: #AFB4FF;
-    width: 100vh;
+    flex-direction: column;
+    justify-content: start;
+    font-family: 'Raleway', sans-serif;
+    background-color: #8E3200;
+    border: none;
+    border-radius: 5px;
 }
 
 h1 {
-    color: #B1E1FF;
+    color: #FFEBC1;
     font-size: 5vw;
 }
-</style>
 
-<!-- #A66CFF
-#9C9EFE
-#AFB4FF
-#B1E1FF -->
+#img {
+    margin: auto;
+    width: 500px;
+    height: 500px;
+}
+
+/* #cred {
+    margin-top: 5%;
+    background-color: #8E3200;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+} */
+
+#nav{
+    width: 50px;
+}
+</style>

@@ -18,8 +18,7 @@ export default {
 
 #footer {
     text-align: center;
-    background-color: #A66CFF;
-    margin-top: 50px;
+    background-color: #A66CFF
 }
 
 a {
