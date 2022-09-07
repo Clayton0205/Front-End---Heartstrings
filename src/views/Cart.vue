@@ -60,6 +60,7 @@ export default {
     height: 93vh;
     font-family: Rockwell;
     color: #B1E1FF;
+    text-align: center;
 }
 
 .heading {

@@ -1,8 +1,8 @@
 <template>
   <nav>
-    <navleft />
+    <navleft/>
   </nav>
-  <router-view />
+    <router-view />
 </template>
 
 <script>
@@ -18,7 +18,9 @@ export default {
   padding: 0;
 }
 
+
 nav {
-  position: fixed;
+  height: 35px;
+  background-color: #8E3200;
 }
 </style>

@@ -1,30 +1,27 @@
 <template>
-    <div id="page">
+        <div id="page">
             <div class="container">
-            <div class="row">
-                <h1 id="heading">Don't have an Account!? Please Register here!!</h1>
-            </div>
-            <br>
-            
+                <div class="row">
+                    <h1 id="heading">Don't have an Account!? Please Register here!!</h1>
+                </div>
+                <br>
                 <div class="row card">
-                <label for="Fullname" class="textincard">Fullname</label>
-                <input type="text" v-model="fullname" class="textincard">
+                    <label for="Fullname" class="textincard">Fullname</label>
+                    <input type="text" v-model="fullname" class="textincard">
+                </div>
+                <div class="row card">
+                    <label for="Email" class="textincard">Email</label>
+                    <input type="text" v-model="email" class="textincard">
+                </div>
+                <div class="row card">
+                    <label for="Password" class="textincard">Password</label>
+                    <input type="password" v-model="password" class="textincard">
+                </div>
+                <div class="row">
+                    <button type="button" @click="register()" class="textincard">Register</button>
+                </div>
             </div>
-            <div class="row card">
-                <label for="Email" class="textincard">Email</label>
-                <input type="text" v-model="email" class="textincard">
-            </div>
-            <div class="row card">
-                <label for="Password" class="textincard">Password</label>
-                <input type="password" v-model="password" class="textincard"
-                >
-            </div>
-            <div class="row">
-                <button type="button" @click="register()" class="textincard">Register</button>
-            </div>
-        
         </div>
-    </div>
 </template>
 
 <script>
@@ -56,8 +53,8 @@ methods: {
 }
 
 #page {
-    background-color: #9C9EFE;
-    color: #B1E1FF;
+    background-color: #D7A86E;
+    color: #FFEBC1;
     width: 100%;
     height: 93vh;
     font-family: Rockwell;
@@ -65,6 +62,7 @@ methods: {
     display: flex;
     justify-content: center;
 }
+
 
 #heading {
     text-decoration: underline;

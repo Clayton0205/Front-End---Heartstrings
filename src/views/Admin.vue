@@ -2,14 +2,15 @@
     <div id="page">
         <h1>All Items</h1>
         <!-- <router-link> -->
-        <div v-for="album in albums" :key="album" class="container">
-            <div class="row">
+        <div v-for="album in albums" :key="album" class="container-fluid">
+            <div class="row hurt">
                 <div class="col">
                     <h2>{{ album.album }}</h2>
                 </div>
                 <div class="col">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#update'+album.id">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        :data-bs-target="'#update'+album.id">
                         Launch demo modal
                     </button>
 
@@ -25,7 +26,8 @@
 
     <!-- Modal -->
     <div v-for="album in albums" :key="album">
-        <div class="modal fade" :id="'update'+album.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" :id="'update'+album.id" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -44,7 +46,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" @click="this.$store.dispatch('updateAlbum', album)">Save changes</button>
+                        <button type="button" class="btn btn-primary"
+                            @click="this.$store.dispatch('updateAlbum', album)">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -83,5 +86,10 @@ export default {
     height: 93vh;
     font-family: Rockwell;
     color: #B1E1FF;
+    text-align: center;
+}
+
+.hurt {
+    margin-left: 20px;
 }
 </style>

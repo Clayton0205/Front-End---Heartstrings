@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="container">
-      <div class="row left">
+      <div class="row">
         <div class="col">
           <router-link to="/">
             <button type="button">
@@ -69,7 +69,6 @@
   padding: 0;
 }
 
-
 .container {
   width: 100px;
 }
@@ -85,9 +84,9 @@
 button {
   border: none;
   border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  height: 50px;
-  width: 100px;
+  border-top-right-radius: 5px;
+  height: 35px;
+  width: 40px;
   font-family: Rockwell;
   background-color: #8E3200;
   color: #FFEBC1;
@@ -107,20 +106,11 @@ a {
   font-family: Rockwell;
   text-decoration: none;
   color: #B1E1FF;
-  font-size: 20px;
-  /* text-decoration: underline; */
+  font-size: 10px;
 }
 
 a:hover {
   text-decoration: line-through;
 }
 
-.left {
-  display: flex;
-  flex-direction: column;
-}
-
-@media only screen and (min-width: 299px) and (max-width: px) {
-
-}
 </style>

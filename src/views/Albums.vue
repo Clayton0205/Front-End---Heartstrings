@@ -1,6 +1,32 @@
 <template>
     <div id="page">
-        <input type="text" v-model="search" placeholder="search">
+        <input type="text" v-model="search" placeholder="Search">
+        <div id="filter">
+            <select>
+                <option value="none">None</option>
+                <option value="saab">Billie Eilish</option>
+                <option value="opel">Rustage</option>
+                <option value="audi">Shwabadi</option>
+            </select>
+            <select>
+                <option value="volvo">None</option>
+                <option value="saab">Single</option>
+                <option value="opel">EP</option>
+                <option value="audi">Album</option>
+            </select>
+            <select>
+                <option value="volvo">None</option>
+                <option value="saab">2000-2010</option>
+                <option value="opel">2011-2020</option>
+                <option value="audi">2021-</option>
+            </select>
+            <select>
+                <option value="volvo">None</option>
+                <option value="saab">0-100</option>
+                <option value="opel">101-200</option>
+                <option value="audi">201-300</option>
+            </select>
+        </div>
         <div class="container-fluid" v-if="albums">
             <div v-for="album in albums" :key="album" id="box">
                 <router-link :to="{ name: 'album', params: { id: album.id } }">
@@ -69,7 +95,7 @@ export default {
 .card {
     text-align: center;
     width: 25vw;
-    height: 52vh;
+    height: 55vh;
     background-color: #8E3200;
 }
 
@@ -89,12 +115,25 @@ a {
 }
 
 input {
+    margin-top: 20px;
     margin-left: 20%;
-    background-color: blue;
-    color: lightblue;
+    margin-bottom: 20px;
+    background-color: #8E3200;
+    color: #FFEBC1;
     text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Rockwell;
     width: 1000px;
-    height: 20px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+::-webkit-input-placeholder {
+    color: #FFEBC1;
+}
+
+#filter {
+    margin-left: 40%;
+    margin-bottom: 10px;
 }
 </style>
