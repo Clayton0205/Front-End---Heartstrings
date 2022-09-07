@@ -2,14 +2,18 @@
     <div id="page">
         <div class="container-fluid">
             <div class="row">
-                <div class="col" id="nav">
+                <div class="col-4" id="nav">
                     <navleft />
                 </div>
-                <div class="col" id="header">
+                <div class="col-4" id="header">
                     <img src="../assets/tumblr_mw1l2sYQs81svwlszo1_500.webp" id="img">
                     <h1 id="h1">Heartstrings</h1>
                 </div>
-                <!-- <div class="col" id="cred">GAyer</div> -->
+                <div class="col-4" id="cred">
+                    <h1>
+                        op
+                    </h1>
+                </div>
             </div>
 
         </div>
@@ -60,14 +64,15 @@ h1 {
     height: 500px;
 }
 
-/* #cred {
+#cred {
     margin-top: 5%;
     background-color: #8E3200;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-} */
+}
 
 #nav{
     width: 50px;
+    background-color: #8E3200;
 }
 </style>
