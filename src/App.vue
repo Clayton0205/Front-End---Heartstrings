@@ -1,11 +1,14 @@
 <template>
   <nav>
+    <navleft />
   </nav>
   <router-view />
 </template>
 
 <script>
+import navleft from "./components/navleft.vue"
 export default {
+  components: { navleft }
 }
 </script>
 
@@ -13,5 +16,9 @@ export default {
 * {
   margin: 0;
   padding: 0;
+}
+
+nav {
+  position: fixed;
 }
 </style>

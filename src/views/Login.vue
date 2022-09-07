@@ -11,7 +11,7 @@
             </div>
             <div class="row card">
                 <label for="Password" class="textincard">Password</label>
-                <input type="text" v-model="password" class="textincard">
+                <input type="password" v-model="password" class="textincard">
             </div>
             <div class="row">
                 <button type="button" @click="login()" class="textincard">Login</button>

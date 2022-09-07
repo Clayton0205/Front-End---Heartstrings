@@ -69,25 +69,24 @@
   padding: 0;
 }
 
+
 .container {
   width: 100px;
 }
 
 .row {
   position: absolute;
-  border-right: 1px solid #8E3200;
 }
 
 .col {
   margin-bottom: 10px;
-  color: #B1E1FF;
 }
 
 button {
   border: none;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  height: 86px;
+  height: 50px;
   width: 100px;
   font-family: Rockwell;
   background-color: #8E3200;

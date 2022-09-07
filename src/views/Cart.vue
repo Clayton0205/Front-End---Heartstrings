@@ -12,7 +12,7 @@
                     <div class="col">
                         <h1>{{ album.album }}</h1>
                     </div>
-                    <div class="col"><button type="button" @click="deleteSingle()">Delete Item</button></div>
+                    <div class="col"><button type="button" @click="deleteSingle(user.cart.id)">Delete Item</button></div>
                 </div>
             </div>
         </div>
@@ -41,8 +41,8 @@ export default {
             this.$store.dispatch('deleteCart')
             this.cart = null
         },
-        deleteSingle() {
-            this.$store.dispatch('deleteSingleCart')
+        deleteSingle(id) {
+            this.$store.dispatch('deleteSingleCart', id)
         }
     }
 }

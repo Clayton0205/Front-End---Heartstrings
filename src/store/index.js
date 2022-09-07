@@ -172,10 +172,10 @@ export default createStore({
           }
         });
     },
-    deleteSingleCart(context) {
+    deleteSingleCart(context, id) {
       fetch(
         "https://heartstrings-api.herokuapp.com/users/" +
-          context.state.user.userID + "/cart/" + context.state.cart.cartId,
+          context.state.user.userID + "/cart/" + id,
         {
           method: "DELETE",
         }
