@@ -2,13 +2,16 @@
     <div id="page">
         <div class="container-fluid">
             <div class="row">
-                <div id="header">
+                <div class="col-4 login">
+                    <h1>We advise that you login first</h1>
+                    <router-link to="/login">Login</router-link>
+                </div>
+                <div class="col-4" id="header">
                     <img src="../assets/tumblr_mw1l2sYQs81svwlszo1_500.webp" id="img">
                     <h1 id="h1">Heartstrings</h1>
-                    <h3>We advise that you login first</h3>
-                    <router-link to="/login"><button type="button">Login</button></router-link>
-                    <h3>and if you don't have one then you can register here</h3>
-                    <router-link to="/register"><button type="button">Register</button></router-link>
+                </div>
+                <div class="col-4 register">
+                    <h1>Don't have an Account? Register here</h1>
                 </div>
             </div>
         </div>
@@ -30,13 +33,13 @@ export default {
 #page {
     background-color: #D7A86E;
     width: 100%;
-    height: 100vh;
+    height: 95vh;
     color: #FFEBC1;
 }
 
 #header {
-    margin-left: 35%;
-    margin-top: 9px;
+    margin-top: 5%;
+    margin-right: 20px;
     width: 500px;
     text-align: center;
     display: flex;
@@ -69,8 +72,22 @@ button {
 }
 
 button:hover {
-  color: #FFEBC1;
-  background-color: #8E3200;
+    color: #FFEBC1;
+    background-color: #8E3200;
 }
 
+.login {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5%;
+    text-align: center;
+    background-color: #8E3200;
+    width: 450px;
+}
+
+.register {
+    margin-top: 5%;
+    text-align: center;
+    background-color: #8E3200;
+}
 </style>
