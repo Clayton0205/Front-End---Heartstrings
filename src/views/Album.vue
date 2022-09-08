@@ -21,7 +21,7 @@
                             <p class="side">Type : <br> {{ album[0].musictype }}</p>
                         </div>
                         <div class="row">
-                            <Navbar/>
+                            <Navbar />
                         </div>
                     </div>
                 </div>
@@ -47,9 +47,7 @@
                 <div class="col button">
                     <button type="button"> <a href="#box">Description</a></button>
                     <button @click="addCart()" type="button">
-                        <router-link to="/thank">
-                            + Add to Cart
-                        </router-link>
+                        + Add to Cart
                     </button>
                 </div>
                 <div class="col"></div>
@@ -107,24 +105,34 @@ export default {
 }
 
 #page {
-    background-color: #9C9EFE;
+    background-color: #D7A86E;
     width: 100%;
     height: 115vh;
     font-family: Rockwell;
-    color: #B1E1FF;
+    color: #FFEBC1;
 }
 
 button {
-    background-color: #A66CFF;
-    color: #B1E1FF;
+    border: none;
+    border-radius: 5px;
+    background-color: #8E3200;
+    color: #FFEBC1;
     width: 10vw;
     margin-top: 20px;
     margin-left: 4vw;
 }
 
+button:hover {
+    background-color: #531d00;
+}
+
+button:focus {
+    background-color: #531d00;
+}
+
 a {
     text-decoration: none;
-    color: #B1E1FF;
+    color: #FFEBC1;
 }
 
 #header {
@@ -152,7 +160,7 @@ a {
     /* margin-top: 20vh; */
     margin: auto;
     text-align: center;
-    background-color: #A66CFF;
+    background-color: #8E3200;
     width: 95vw;
     height: 15vh;
 }

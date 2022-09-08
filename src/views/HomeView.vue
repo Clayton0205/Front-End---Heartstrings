@@ -3,15 +3,20 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-4 login">
+                    <div class="side">
                     <h1>We advise that you login first</h1>
-                    <router-link to="/login">Login</router-link>
+                    </div>
+                    <router-link to="/login"><Button type="button">Login</Button></router-link>
                 </div>
                 <div class="col-4" id="header">
                     <img src="../assets/tumblr_mw1l2sYQs81svwlszo1_500.webp" id="img">
                     <h1 id="h1">Heartstrings</h1>
                 </div>
                 <div class="col-4 register">
+                    <div class="side">
                     <h1>Don't have an Account? Register here</h1>
+                    </div>
+                    <router-link to="/register"><Button type="button">Register</Button></router-link>
                 </div>
             </div>
         </div>
@@ -65,7 +70,8 @@ h1 {
 button {
     border: none;
     border-radius: 5px;
-    width: 100px;
+    width: 200px;
+    height: 30px;
     font-family: Rockwell;
     background-color: #FFEBC1;
     color: #8E3200;
@@ -77,17 +83,31 @@ button:hover {
 }
 
 .login {
-    margin-left: 20px;
+    margin-left: 45px;
     margin-right: 20px;
-    margin-top: 5%;
+    margin-top: 10%;
     text-align: center;
     background-color: #8E3200;
     width: 450px;
+    height: 450px;
+    font-family: Rockwell;
+    border: none;
+    border-radius: 5px;
+
 }
 
 .register {
-    margin-top: 5%;
+    margin-top: 10%;
     text-align: center;
     background-color: #8E3200;
+    width: 450px;
+    height: 450px;
+    font-family: Rockwell;
+    border: none;
+    border-radius: 5px;
+}
+
+.side {
+    height: 400px;
 }
 </style>

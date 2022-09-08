@@ -84,4 +84,14 @@ methods: {
 button {
     width: 50vw;
 }
+
+label {
+    background-color: #8E3200;
+}
+
+input {
+    background-color: #FFEBC1;
+    color: #8E3200;
+    text-align: center;
+}
 </style>

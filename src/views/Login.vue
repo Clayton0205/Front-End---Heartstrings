@@ -47,8 +47,8 @@ methods:{
 }
 
 #page {
-    background-color: #9C9EFE;
-    color: #B1E1FF;
+    background-color: #D7A86E;
+    color: #FFEBC1;
     width: 100%;
     height: 93vh;
     font-family: Rockwell;
@@ -77,4 +77,15 @@ methods:{
 button {
     width: 50vw;
 }
+
+label {
+    background-color: #8E3200;
+}
+
+input {
+    background-color: #FFEBC1;
+    color: #8E3200;
+    text-align: center;
+}
+
 </style>
