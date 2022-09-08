@@ -18,12 +18,9 @@
                 </div>
             </div>
         </div>
-        <div v-else>
-            <div class="container-fluid">
-                <div class="row heading">
-                    <h1>Your Cart</h1>
-                </div>
-            </div>
+        <div v-else id="loader">
+            <h1>You are not Loged in</h1>
+            <img src="https://i.postimg.cc/s2nCZZYc/image-search-1662645757790.gif">
         </div>
     </div>
 </template>
@@ -76,5 +73,9 @@ export default {
     text-align: start;
     width: 1000px;
     border: 1px solid black;
+}
+
+#loader {
+    text-align: center;
 }
 </style>

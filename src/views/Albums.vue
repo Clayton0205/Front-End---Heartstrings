@@ -40,8 +40,8 @@
                 </router-link>
             </div>
         </div>
-        <div v-else>
-            Why are you not loading
+        <div v-else id="loader">
+           <img src="https://i.postimg.cc/s2nCZZYc/image-search-1662645757790.gif">
         </div>
         <Footer />
     </div>
@@ -135,5 +135,9 @@ input {
 #filter {
     margin-left: 40%;
     margin-bottom: 10px;
+}
+
+#loader {
+    text-align: center;
 }
 </style>

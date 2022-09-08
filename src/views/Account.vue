@@ -1,11 +1,12 @@
 <template>
     <div id="page">
-        <div v-if="user">
+        <div v-if="user" class="account">
             <h1>{{ user.Fullname }}</h1>
             <h1>{{ user.Email }}</h1>
         </div>
-        <div v-else>
-            <h1>You are not loged in</h1>
+        <div v-else id="loader">
+            <h1>You are not Loged in</h1>
+            <img src="https://i.postimg.cc/s2nCZZYc/image-search-1662645757790.gif">
         </div>
     </div>
 </template>
@@ -17,7 +18,7 @@ export default {
             return this.$store.state.user
         }
     }
-    }
+}
 </script>
 
 <style scoped>
@@ -27,10 +28,18 @@ export default {
 }
 
 #page {
-    background-color: #9C9EFE;
+    background-color: #D7A86E;
     width: 100%;
     height: 93vh;
     font-family: Rockwell;
-    color: #B1E1FF;
+    color: #FFEBC1;
+}
+
+.account {
+    text-align: center;
+}
+
+#loader {
+    text-align: center;
 }
 </style>

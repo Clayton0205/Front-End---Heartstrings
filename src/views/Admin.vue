@@ -1,17 +1,15 @@
 <template>
     <div id="page">
         <h1>All Items</h1>
-        <!-- <router-link> -->
         <div v-for="album in albums" :key="album" class="container-fluid">
             <div class="row hurt">
                 <div class="col">
                     <h2>{{ album.album }}</h2>
                 </div>
                 <div class="col">
-                    <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         :data-bs-target="'#update'+album.id">
-                        Launch demo modal
+                        Edit
                     </button>
 
                     <button type="button" @click="'delete', (album.id)">delete</button>
@@ -91,5 +89,18 @@ export default {
 
 .hurt {
     margin-left: 20px;
+}
+
+#loader {
+    text-align: center;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background-color: #8E3200;
+    color: #FFEBC1;
+    width: 10vw;
+    margin-left: 10px;
 }
 </style>

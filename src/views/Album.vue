@@ -58,8 +58,8 @@
                 </div>
             </div>
         </div>
-        <div v-else>
-            no Load
+        <div v-else id="loader">
+           <img src="https://i.postimg.cc/s2nCZZYc/image-search-1662645757790.gif">
         </div>
         <Footer />
     </div>
@@ -163,5 +163,9 @@ a {
     background-color: #8E3200;
     width: 95vw;
     height: 15vh;
+}
+
+#loader {
+    text-align: center;
 }
 </style>
