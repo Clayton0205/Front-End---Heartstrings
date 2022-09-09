@@ -39,8 +39,7 @@ export default {
 
             });
         }
-    },
-    components: { Footer }
+    }
 }
 </script>
 
@@ -48,7 +47,7 @@ export default {
 #page {
     background-color: black;
     width: 100%;
-    height: 235vh;
+    height: 250vh;
     font-family: Futara;
 }
 
