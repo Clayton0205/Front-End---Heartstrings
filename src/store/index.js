@@ -140,12 +140,24 @@ export default createStore({
       })
         .then((response) => response.json())
         .then((data) => {
-          if (data.msg === "Email Not Found") {
-            alert(data.msg);
-          } else if (data.msg === "Password is Incorrect") {
-            alert(data.msg);
+          if (
+            data.msg == Swal.fire({
+              icon: 'error',
+              title: 'User Does Not Exist',
+              title: 'or your Credentials are wrong'
+            })
+          ) {
+            alert(Swal.fire({
+              icon: 'error',
+              title: 'User Does Not Exist',
+              title: 'or your Credentials are wrong'
+            }));
           } else {
-            alert("You are now loged in");
+            Swal.fire({
+              icon:'success',
+              title: 'Login successful'
+            }
+            );
             context.commit("setUser", data.user[0]);
             context.dispatch("getUserCart");
           }
@@ -176,12 +188,14 @@ export default createStore({
       )
         .then((response) => response.json())
         .then((data) => {
-          if (data.results == "There is no user with that id") {
-            alert(data.results);
-          } else {
-            alert("Item Added");
-            context.dispatch("getUserCart");
-          }
+          if (data.msg === Swal.fire({
+            icon: 'error',
+            title: 'User Not Found'
+          })) {
+            alert(data.msg);
+          } else Swal.fire(
+            'Album added successfully'
+          )
         });
     },
     deleteCart(context) {
@@ -195,30 +209,15 @@ export default createStore({
       )
         .then((res) => res.json())
         .then((data) => {
-          if (data.result == "There is no user with that ID") {
-            alert(data.result);
-          } else {
-            alert("Cart Deleted");
-            context.dispatch("getUserCart");
-          }
-        });
-    },
-    deleteSingleCart(context, id) {
-      fetch(
-        "https://heartstrings-api.herokuapp.com/users/" +
-          context.state.user.userID + "/cart/" + id,
-        {
-          method: "DELETE",
-        }
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.result == "There is no user with that ID") {
-            alert(data.result);
-          } else {
-            alert("Item Removed from cart");
-            context.dispatch("getUserCart");
-          }
+          if (data.msg === Swal.fire({
+            icon: 'error',
+            title: 'Value is Wrong',
+            text: 'Year, Price and CreatorID must be numbers'
+          })) {
+            alert(data.msg);
+          } else Swal.fire(
+            'Your Cart Has been cleared'
+          )
         });
     },
   },
