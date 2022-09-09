@@ -28,7 +28,7 @@ export default {
 }
 
 #page {
-    background-color: #D7A86E;
+    background-color: black;
     width: 100%;
     height: 93vh;
     font-family: Rockwell;
