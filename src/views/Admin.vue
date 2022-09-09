@@ -1,8 +1,8 @@
 <template>
     <div id="page">
-        <h1>All Items</h1>
+        <h1 class="title">All Items</h1>
         <div v-for="album in albums" :key="album" class="container-fluid">
-            <div class="row hurt">
+            <div class="row content">
                 <div class="col">
                     <h2>{{ album.album }}</h2>
                 </div>
@@ -16,7 +16,54 @@
                 </div>
             </div>
         </div>
-        <!-- </router-link> -->
+        <div class="container-fluid add card">
+            <div class="row title">
+                <h1>Add Album</h1>
+            </div>
+            <div class="row">
+                <div class="col item">
+                    <label for="Music Type">Music Type</label>
+                    <input type="text" v-model="musictype">
+                </div>
+                <div class="col item">
+                    <label for="Album">Album</label>
+                    <input type="text" v-model="album">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col item">
+                    <label for="Image">Image</label>
+                    <input type="text" v-model="image">
+                </div>
+                <div class="col item">
+                    <label for="Description">Description</label>
+                    <input type="text" v-model="description">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col item">
+                    <label for="Artist">Artist</label>
+                    <input type="text" v-model="artist">
+                </div>
+                <div class="col item">
+                    <label for="Year">Year</label>
+                    <input type="text" v-model="year">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col item">
+                    <label for="Price">Price</label>
+                    <input type="text" v-model="price">
+                </div>
+                <div class="col item">
+                    <label for="creatorID">creatorID</label>
+                    <input type="text" v-model="creatorID">
+                </div>
+            </div>
+            <div class="row button">
+                <button type="button" id="button" @click="addAlbum()">Add</button>
+            </div>
+        </div>
     </div>
 
     <!-- MODAL STUFF -->
@@ -30,7 +77,6 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">{{ album.album }}</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <input type="text" v-model="album.musictype">
@@ -43,9 +89,9 @@
                         <input type="text" v-model="album.creatorID">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary"
-                            @click="this.$store.dispatch('updateAlbum', album)">Save changes</button>
+                            @click="this.$store.dispatch('updateAlbum', album)" data-bs-dismiss="modal">Save
+                            changes</button>
                     </div>
                 </div>
             </div>
@@ -56,6 +102,18 @@
 
 <script>
 export default {
+    data() {
+        return {
+            musictype: '',
+            album: '',
+            image: '',
+            description: '',
+            artist: '',
+            year: '',
+            price: '',
+            creatorID: ''
+        }
+    },
     mounted() {
         this.$store.dispatch("getAlbums")
     },
@@ -67,6 +125,19 @@ export default {
     methods: {
         delete(id) {
             this.$store.dispatch('deleteAlbum', id)
+        },
+        addAlbum() {
+            const album = {
+                musictype: this.musictype,
+                album: this.album,
+                image: this.image,
+                description: this.description,
+                artist: this.artist,
+                year: this.year,
+                price: this.price,
+                creatorID: this.creatorID
+            }
+            this.$store.dispatch('addAlbum', album)
         }
     }
 }
@@ -79,7 +150,7 @@ export default {
 }
 
 #page {
-    background-color: #9C9EFE;
+    background-color: #D7A86E;
     width: 100%;
     height: 93vh;
     font-family: Rockwell;
@@ -87,12 +158,30 @@ export default {
     text-align: center;
 }
 
-.hurt {
+.content {
     margin-left: 20px;
+    color: #FFEBC1;
+}
+
+.title {
+    color: #FFEBC1;
+    text-decoration: underline;
 }
 
 #loader {
     text-align: center;
+}
+
+.button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#button {
+    background-color: #FFEBC1;
+    color: #8E3200;
 }
 
 button {
@@ -102,5 +191,29 @@ button {
     color: #FFEBC1;
     width: 10vw;
     margin-left: 10px;
+}
+
+.modal {
+    margin-top: 10%;
+    margin-left: 35%;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.add {
+    margin: auto;
+    margin-top: 20px;
+    background-color: #8E3200;
+    color: #FFEBC1;
+    width: 500px;
+}
+
+.item {
+    margin-left: 2px;
+    margin-right: 2px;
+    display: flex;
+    flex-direction: column;
 }
 </style>

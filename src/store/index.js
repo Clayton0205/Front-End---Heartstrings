@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 export default createStore({
   state: {
@@ -55,19 +56,39 @@ export default createStore({
         }
       })
     },
-    deleteAlbum(context, id){
-      fetch('https://heartstrings-api.herokuapp.com/albums/' + id, {
-        method: 'DELETE'
+   addAlbum(context, payload) {
+      const { musictype, album, image, description, artist, year, price, creatorID} = payload;
+      fetch("https://heartstrings-api.herokuapp.com/albums", {
+        method: "POST",
+        body: JSON.stringify({
+          musictype: musictype,
+          album: album,
+          image: image,
+          description: description,
+          artist: artist,
+          year: year,
+          price: price,
+          creatorID: creatorID
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
       })
-      .then((res)=> res.json())
-      .then((data)=>{
-        swal({
-          icon: 'success',
-          title: 'Weapon Deleted',
-          timer: 1000
-        })
-        context.dispatch('getAlbums')
-      })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.msg === Swal.fire({
+          icon: 'error',
+          title: 'Value is Wrong',
+          text: 'Year, Price and CreatorID must be numbers'
+        })) {
+          alert(data.msg);
+        } else Swal.fire(
+          'Album added successfully'
+        );
+        context.commit("setAlbums", album);
+        context.dispatch("getAlbums");
+      });
+  
     },
     register(context, payload) {
       const { fullname, email, password } = payload;
@@ -85,11 +106,21 @@ export default createStore({
         .then((response) => response.json())
         .then((data) => {
           if (
-            data.msg == "The provided email exists. Please enter another one"
+            data.msg == Swal.fire({
+              icon: 'error',
+              title: 'The provided email exists. Please enter another one'
+            })
           ) {
-            alert("The provided email exists. Please enter another one");
+            alert(Swal.fire({
+              icon: 'error',
+              title: 'The provided email exists. Please enter another one',
+            }));
           } else {
-            alert("Registration Successful");
+            Swal.fire({
+              icon:'success',
+              title: 'Registration successfully'
+            }
+            );
           }
         });
     },
