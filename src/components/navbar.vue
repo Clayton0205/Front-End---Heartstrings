@@ -5,7 +5,7 @@
         <div class="col">
           <router-link to="/">
             <button type="button">
-              Home
+              <i class="bi bi-house-door-fill"></i>
             </button>
           </router-link>
         </div>
@@ -61,8 +61,8 @@
       </div>
     </div>
   </nav>
-
 </template>
+
 <style scoped>
 * {
   margin: 0;
@@ -72,43 +72,36 @@
 .container {
   width: 100px;
 }
-
 .row {
   position: absolute;
 }
-
 .col {
   margin-bottom: 10px;
 }
-
 button {
   border: none;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   height: 35px;
   width: 40px;
-  font-family: Rockwell;
-  background-color: #8E3200;
-  color: #FFEBC1;
+  font-family: Futara;
+  background-color: white;
+  color: black;
 }
-
 button:hover {
-  color: #8E3200;
-  background-color: #D7A86E;
+  color: white;
+  background-color: black;
 }
-
 button:focus{
-  color: #8E3200;
-  background-color: #D7A86E;
+  color: white;
+  background-color: black;
 }
-
 a {
-  font-family: Rockwell;
+  font-family: Futara;
   text-decoration: none;
   color: #B1E1FF;
   font-size: 10px;
 }
-
 a:hover {
   text-decoration: line-through;
 }

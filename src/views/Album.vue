@@ -61,14 +61,11 @@
         <div v-else id="loader">
            <img src="https://i.postimg.cc/s2nCZZYc/image-search-1662645757790.gif">
         </div>
-        <Footer />
     </div>
 </template>
 
 <script>
-import Footer from "../components/Footer.vue";
 export default {
-    components: { Footer },
     computed: {
         album() {
             return this.$store.state.album;
@@ -105,34 +102,36 @@ export default {
 }
 
 #page {
-    background-color: #D7A86E;
+    background-color: black;
     width: 100%;
     height: 115vh;
-    font-family: Rockwell;
-    color: #FFEBC1;
+    font-family: Futara;
+    color: white;
 }
 
 button {
     border: none;
     border-radius: 5px;
-    background-color: #8E3200;
-    color: #FFEBC1;
+    background-color: white;
+    color: black;
     width: 10vw;
     margin-top: 20px;
     margin-left: 4vw;
 }
 
 button:hover {
-    background-color: #531d00;
+    background-color: black;
+    color: white;
 }
 
 button:focus {
-    background-color: #531d00;
+    background-color: black;
+    color: white;
 }
 
 a {
     text-decoration: none;
-    color: #FFEBC1;
+    color: black;
 }
 
 #header {
@@ -160,7 +159,8 @@ a {
     /* margin-top: 20vh; */
     margin: auto;
     text-align: center;
-    background-color: #8E3200;
+    background-color: white;
+    color: black;
     width: 95vw;
     height: 15vh;
 }

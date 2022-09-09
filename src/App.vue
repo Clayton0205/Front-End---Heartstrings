@@ -1,14 +1,16 @@
 <template>
   <nav>
-    <navleft/>
+    <navbar />
   </nav>
-    <router-view />
+        <router-view />
+        <Footer/>
 </template>
 
 <script>
-import navleft from "./components/navleft.vue"
+import navbar from "./components/navbar.vue";
+import Footer from "./components/Footer.vue";
 export default {
-  components: { navleft }
+    components: { navbar, Footer }
 }
 </script>
 
@@ -18,9 +20,8 @@ export default {
   padding: 0;
 }
 
-
 nav {
   height: 35px;
-  background-color: #8E3200;
+  background-color: black;
 }
 </style>

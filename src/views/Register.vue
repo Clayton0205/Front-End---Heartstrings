@@ -53,11 +53,11 @@ methods: {
 }
 
 #page {
-    background-color: #D7A86E;
-    color: #FFEBC1;
+    background-color: black;
+    color: white;
     width: 100%;
     height: 93vh;
-    font-family: Rockwell;
+    font-family: Futara;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -86,12 +86,13 @@ button {
 }
 
 label {
-    background-color: #8E3200;
+    background-color: white;
+    color: black;
 }
 
 input {
-    background-color: #FFEBC1;
-    color: #8E3200;
+    background-color: black;
+    color: white;
     text-align: center;
 }
 </style>

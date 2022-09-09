@@ -54,11 +54,11 @@ export default {
 }
 
 #page {
-    background-color: #D7A86E;
+    background-color: black;
     width: 100%;
     height: 93vh;
-    font-family: Rockwell;
-    color: #FFEBC1;
+    font-family: Futara;
+    color: white;
     text-align: center;
 }
 
@@ -69,7 +69,8 @@ export default {
 
 #item {
     margin-left: 190px;
-    background-color: #8E3200;
+    background-color: white;
+    color: black;
     text-align: start;
     width: 1000px;
     border: 1px solid black;

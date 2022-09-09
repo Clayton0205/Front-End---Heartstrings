@@ -1,32 +1,6 @@
 <template>
     <div id="page">
         <input type="text" v-model="search" placeholder="Search">
-        <div id="filter">
-            <select>
-                <option value="none">None</option>
-                <option value="saab">Billie Eilish</option>
-                <option value="opel">Rustage</option>
-                <option value="audi">Shwabadi</option>
-            </select>
-            <select>
-                <option value="volvo">None</option>
-                <option value="saab">Single</option>
-                <option value="opel">EP</option>
-                <option value="audi">Album</option>
-            </select>
-            <select>
-                <option value="volvo">None</option>
-                <option value="saab">2000-2010</option>
-                <option value="opel">2011-2020</option>
-                <option value="audi">2021-</option>
-            </select>
-            <select>
-                <option value="volvo">None</option>
-                <option value="saab">0-100</option>
-                <option value="opel">101-200</option>
-                <option value="audi">201-300</option>
-            </select>
-        </div>
         <div class="container-fluid" v-if="albums">
             <div v-for="album in albums" :key="album" id="box">
                 <router-link :to="{ name: 'album', params: { id: album.id } }">
@@ -43,19 +17,16 @@
         <div v-else id="loader">
            <img src="https://i.postimg.cc/s2nCZZYc/image-search-1662645757790.gif">
         </div>
-        <Footer />
     </div>
 </template>
 
 <script>
-import Footer from "../components/Footer.vue";
 export default {
     data() {
         return {
             search: ""
         }
     },
-    components: [Footer],
     mounted() {
         this.$store.dispatch("getAlbums");
     },
@@ -75,10 +46,10 @@ export default {
 
 <style scoped>
 #page {
-    background-color: #D7A86E;
+    background-color: black;
     width: 100%;
     height: 235vh;
-    font-family: Rockwell;
+    font-family: Futara;
 }
 
 .container-fluid {
@@ -96,11 +67,12 @@ export default {
     text-align: center;
     width: 25vw;
     height: 55vh;
-    background-color: #8E3200;
+    background-color: white;
+    
 }
 
 a {
-    color: #FFEBC1;
+    color: black;
     text-decoration: none;
 }
 
@@ -118,18 +90,19 @@ input {
     margin-top: 20px;
     margin-left: 20%;
     margin-bottom: 20px;
-    background-color: #8E3200;
-    color: #FFEBC1;
+    background-color: white;
+    color: black;
     text-align: center;
-    font-family: Rockwell;
+    font-family: Futara;
     width: 1000px;
     height: 30px;
     border: none;
     border-radius: 5px;
+    box-shadow: 0 0 5px 5px rgb(196, 196, 196);
 }
 
 ::-webkit-input-placeholder {
-    color: #FFEBC1;
+    color: black;
 }
 
 #filter {

@@ -31,8 +31,8 @@ export default {
     background-color: black;
     width: 100%;
     height: 93vh;
-    font-family: Rockwell;
-    color: #FFEBC1;
+    font-family: Futara;
+    color: white;
 }
 
 .account {

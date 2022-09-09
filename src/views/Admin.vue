@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="container-fluid add card">
-            <div class="row title">
+            <div class="row title" id="title">
                 <h1>Add Album</h1>
             </div>
             <div class="row">
@@ -150,21 +150,21 @@ export default {
 }
 
 #page {
-    background-color: #D7A86E;
+    background-color: black;
     width: 100%;
-    height: 93vh;
-    font-family: Rockwell;
-    color: #B1E1FF;
+    height: 120vh;
+    font-family: Futara;
+    color: white;
     text-align: center;
 }
 
 .content {
     margin-left: 20px;
-    color: #FFEBC1;
+    color: white;
 }
 
 .title {
-    color: #FFEBC1;
+    color: white;
     text-decoration: underline;
 }
 
@@ -180,15 +180,15 @@ export default {
 }
 
 #button {
-    background-color: #FFEBC1;
-    color: #8E3200;
+    background-color: black;
+    color: white;
 }
 
 button {
     border: none;
     border-radius: 5px;
-    background-color: #8E3200;
-    color: #FFEBC1;
+    background-color: white;
+    color: black;
     width: 10vw;
     margin-left: 10px;
 }
@@ -205,8 +205,8 @@ button {
 .add {
     margin: auto;
     margin-top: 20px;
-    background-color: #8E3200;
-    color: #FFEBC1;
+    background-color: white;
+    color: black;
     width: 500px;
 }
 
@@ -215,5 +215,9 @@ button {
     margin-right: 2px;
     display: flex;
     flex-direction: column;
+}
+
+#title {
+    color: black;
 }
 </style>
